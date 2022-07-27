@@ -1,0 +1,28 @@
+.transactionHistory {
+  margin-right: auto;
+  margin-left: auto;
+
+  margin-top: 50px;
+}
+
+.category {
+  padding: 20px 80px 20px 80px;
+
+  background-color: mediumturquoise;
+}
+
+.item {
+  composes: category;
+
+  text-align: center;
+  font-weight: 500;
+}
+
+.item:nth-child(odd) {
+  background-color: darkgrey;
+}
+
+.item:nth-child(even) {
+  background-color: lightgray;
+
+}
