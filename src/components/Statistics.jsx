@@ -32,7 +32,7 @@ function generateRandomColor() {
 Statistics.propTypes = {
   stats: PropTypes.array.isRequired,
   title: PropTypes.string,
-  color: PropTypes.func.isRequired,
+  color: PropTypes.func,
 };
 
 export default Statistics;
