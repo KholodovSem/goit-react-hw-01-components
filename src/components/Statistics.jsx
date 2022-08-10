@@ -2,15 +2,14 @@ import PropTypes from 'prop-types';
 import style from '../styles/Statistic.module.css';
 
 
-
-function Statistics({ title = 'Upload stats', stats, color = generateRandomColor()}) {
+function Statistics({ title = 'Upload stats', stats, color = generateRandomColor() }) {
   return (
     <section className={style.statistics}>
       {title && (<h2 className={style.title}>Upload stats</h2>)}
 
       <ul className={style.statList}>
         {stats.map((stat) => {
-          return <li className={style.item} key={stat.id} style={{backgroundColor: color}}>
+          return <li className={style.item} key={stat.id} style={{ backgroundColor: color }}>
             <span className='label'>{stat.label}</span>
             <span className={style.percentage}>{stat.percentage}</span>
           </li>;
@@ -29,11 +28,15 @@ function generateRandomColor() {
   return color;
 }
 
-Statistics.propTypes = {
-  stats: PropTypes.array.isRequired,
-  title: PropTypes.string,
-  color: PropTypes.func,
-};
 
 export default Statistics;
 
+Statistics.propTypes = {
+  color: PropTypes.func,
+  stats: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  })).isRequired,
+  title: PropTypes.string,
+};
