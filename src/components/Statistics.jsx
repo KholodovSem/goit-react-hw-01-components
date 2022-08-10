@@ -32,7 +32,7 @@ function generateRandomColor() {
 export default Statistics;
 
 Statistics.propTypes = {
-  color: PropTypes.func,
+  color: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   stats: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
